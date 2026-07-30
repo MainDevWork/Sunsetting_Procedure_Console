@@ -1,5 +1,3 @@
-# Content Sunsetting Programme Console
-
 A tracking system that records the outcome of a website content audit across 12,710 pages. For every page it holds a named custodian, a decision, the reason for that decision and the date it was agreed. Three linked Excel record sets and a validated intake form feed a two page Power BI dashboard that reports the progress of the audit and where accountability remains outstanding.
 
 It was built for the **Digital Team** at the Johannesburg Stock Exchange, which runs the audit ahead of the website's migration to a new content management system. Every page is assessed before the move. Pages that are retained are carried forward, and pages that are not are sunsetted, meaning they are withdrawn from the site against a recorded decision, reason and date.
