@@ -1,6 +1,6 @@
 # Sunsetting Procedure Console
 
-**A tracking system that records a named owner, a decision, a reason and a date for each of the 12,710 web addresses on a corporate website, so that pages can be retired before the site moves to new software.**
+**I built the system that put a named, accountable owner on 12,710 web addresses, so a corporate website could finally decide which pages to delete.**
 
 A large organisation's website grows one page at a time over many years, and pages are added far faster than anyone removes them. That is harmless until the site has to move to a new content management system, which is the software the organisation uses to publish and edit its web pages. A move copies content across page by page, so somebody has to decide, for every single page, whether it goes or stays.
 
@@ -248,9 +248,9 @@ Every figure quoted on this page was calculated from the four workbooks in this 
 
 ## Author and Contact
 
-**Ndivhuwo**, design, build and documentation.
+**Ndivhuwo Makhavhu**, data analyst. Design, build and documentation.
 
-- Email: [ndivhuwojse@gmail.com](mailto:ndivhuwojse@gmail.com)
+- Email: [ndivhumakhavhu@gmail.com](mailto:ndivhumakhavhu@gmail.com)
 - LinkedIn: [www.linkedin.com/in/ndivhuwo-makhavhu](https://www.linkedin.com/in/ndivhuwo-makhavhu)
 - GitHub: [github.com/MainDevWork](https://github.com/MainDevWork)
 - This project: [Sunsetting_Procedure_Console](https://github.com/MainDevWork/Sunsetting_Procedure_Console)
