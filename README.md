@@ -1,10 +1,10 @@
 # Sunsetting Procedure Console
 
-**Which pages on a stock exchange's website should stay, and which should go — with a named custodian deciding each one.**
+**I turned 12,710 ownerless web addresses into a single record of who is accountable for each page and what should happen to it.**
 
 `Power BI` `DAX` `Power Query` `Microsoft Excel`
 
-I built the Power BI system that assigns 12,710 web addresses on a stock exchange's website to a named custodian — the person responsible for deciding whether a page stays or goes. Working with a digital team and stakeholders across the business, the audit went through that backlog page by page to determine which content was legacy and which was still relevant, and routed each page to a sunsetting decision: decommissioned, or migrated onto the new content management system. That work sits inside a wider project to migrate the site onto a new CMS built to handle the organisation's scale, and the audit's findings built the business case for it, now before executives for approval.
+Working with a digital team and stakeholders across the business, the audit went through a stock exchange's website page by page, gave each address a named custodian, and determined which content was legacy and which was still relevant. Each page was routed to a sunsetting decision — decommissioned, or migrated onto a new content management system — as part of a wider project to migrate the site onto a CMS built to handle the organisation's scale. The audit's findings built the business case for that migration, now before executives for approval.
 
 Three linked Excel workbooks hold the ownership record, the decision record and the traffic figures. A validated intake form collects decisions from each business division. A two page Power BI report is built on all three workbooks and states how far the work has got and where responsibility is still missing.
 
