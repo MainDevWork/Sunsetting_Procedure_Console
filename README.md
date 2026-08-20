@@ -1,12 +1,12 @@
 # Sunsetting Procedure Console
 
-**I built the system that put a named, accountable owner on 12,710 web addresses, so a corporate website could finally decide which pages to delete.**
+**Which pages on a stock exchange's website should stay, and which should go — with a named custodian deciding each one.**
 
-A large organisation's website grows one page at a time over many years, and pages are added far faster than anyone removes them. That is harmless until the site has to move to a new content management system, which is the software the organisation uses to publish and edit its web pages. A move copies content across page by page, so somebody has to decide, for every single page, whether it goes or stays.
+`Power BI` `DAX` `Power Query` `Microsoft Excel`
 
-The obstacle is not technical. It is that nobody can say who is responsible for a given page, and without a responsible person there is nobody to authorise a removal. The team that asked for the page has been reorganised, the individual who owned it has left, or it was never assigned to anyone. So the safe answer is always to keep the page, which is exactly the behaviour that produced the accumulation.
+I built the Power BI system that assigns 12,710 web addresses on a stock exchange's website to a named custodian — the person responsible for deciding whether a page stays or goes. Working with a digital team and stakeholders across the business, the audit went through that backlog page by page to determine which content was legacy and which was still relevant, and routed each page to a sunsetting decision: decommissioned, or migrated onto the new content management system. That work sits inside a wider project to migrate the site onto a new CMS built to handle the organisation's scale, and the audit's findings built the business case for it, now before executives for approval.
 
-This system was built for the digital team running that audit. It assigns a named custodian, meaning the person accountable for whether a page should still exist, to every web address before any decision is recorded against it. Three linked Excel workbooks hold the ownership record, the decision record and the traffic figures. A validated intake form collects decisions from each business division. A two page Power BI report is built on all three workbooks and states how far the work has got and where responsibility is still missing.
+Three linked Excel workbooks hold the ownership record, the decision record and the traffic figures. A validated intake form collects decisions from each business division. A two page Power BI report is built on all three workbooks and states how far the work has got and where responsibility is still missing.
 
 ## The Numbers
 
@@ -240,9 +240,7 @@ These are figures from the published dataset, which is synthetic. They demonstra
 
 **Every value in this repository is invented.** The addresses, page names, custodian names, business units, divisions, decisions, dates, comments and traffic figures are generated from a fixed starting number against a fictitious organisation called Sableridge Exchange, at `www.sableridge.co.za`. No real web address, person, division or decision appears anywhere in these files. Nothing here describes any real organisation's website, staff or decisions. The generating script is not published.
 
-What is real is the system: the fields, the ten decisions, the five reasons, the three assessment questions, the ten integrity rules, the join between the three files, the dashboard calculations and the process that produces the records. That work was done for a stock exchange's digital team ahead of a website migration, and the published copy replaces the organisation and every value in it. The names of the three destinations behind the `Move To` decisions are generalised for the same reason. The routing itself is as it was designed.
-
-The audit also produced a diagnosis of the legacy CMS's scaling limits and the business case for migrating the site's content onto a new CMS. That case is going to executives for approval. Determining what is still relevant runs through direct engagement with each stakeholder, page by page, and that work is ongoing.
+What is real is the system: the fields, the ten decisions, the five reasons, the three assessment questions, the ten integrity rules, the join between the three files, the dashboard calculations, the CMS diagnosis and business case, and the process that produces the records. That work was done for a stock exchange's digital team as part of a wider CMS migration project, and the published copy replaces the organisation and every value in it. The names of the three destinations behind the `Move To` decisions are generalised for the same reason. The routing itself is as it was designed.
 
 Two properties of the invented data were preserved deliberately, because the system exists to handle them. Traffic is concentrated in the same way as on real websites, where a single page takes a large share of all views and most pages take almost none, because `Very Low Page Views` is only a usable reason when measured against a realistic spread. And the gap between the 12,710 addresses and the 9,727 traffic rows reproduces the real relationship between the sitemap and the measurement window.
 
