@@ -1,10 +1,10 @@
 # Sunsetting Procedure Console
 
-**A named-custodian system that tracks the keep-or-retire decision on 12,710 web addresses, built to support a stock exchange's migration to a new content management system.**
+**A Power BI system that gives every page across a 12,710-address website backlog a custodian and a decision, built to support a stock exchange's move to a new content management system.**
 
 `Power BI` `DAX` `Power Query` `Microsoft Excel`
 
-I built the system that assigns each address a named custodian — the person responsible for deciding whether a page stays or goes — and tracks that decision through to a sunsetting outcome. Working with a digital team and stakeholders across the business, the audit went through the site page by page to determine which content was legacy and which was still relevant, and routed each page to a decision: decommissioned, or migrated onto the new CMS. That work sits inside a wider project to migrate the site onto a CMS built to handle the organisation's scale, and the audit's findings built the business case for it, now before executives for approval.
+I built the system that assigns each page a custodian, the person who decides whether it stays or goes. Working with a digital team and stakeholders across the business, the audit went through the site page by page, sorted legacy content from what was still relevant, and routed each page to a decision: decommissioned, or migrated onto the new CMS. That work is part of a wider project to migrate the site onto a CMS designed to handle the organisation's scale, and the audit's findings built the business case for it, now before executives for approval.
 
 Three linked Excel workbooks hold the ownership record, the decision record and the traffic figures. A validated intake form collects decisions from each business division. A two page Power BI report is built on all three workbooks and states how far the work has got and where responsibility is still missing.
 
