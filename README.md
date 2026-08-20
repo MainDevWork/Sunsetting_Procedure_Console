@@ -242,6 +242,8 @@ These are figures from the published dataset, which is synthetic. They demonstra
 
 What is real is the system: the fields, the ten decisions, the five reasons, the three assessment questions, the ten integrity rules, the join between the three files, the dashboard calculations and the process that produces the records. That work was done for a stock exchange's digital team ahead of a website migration, and the published copy replaces the organisation and every value in it. The names of the three destinations behind the `Move To` decisions are generalised for the same reason. The routing itself is as it was designed.
 
+The audit also produced a diagnosis of the legacy CMS's scaling limits and the business case for replacing it. That case is going to executives for approval. Determining what is still relevant runs through direct engagement with each stakeholder, page by page, and that work is ongoing.
+
 Two properties of the invented data were preserved deliberately, because the system exists to handle them. Traffic is concentrated in the same way as on real websites, where a single page takes a large share of all views and most pages take almost none, because `Very Low Page Views` is only a usable reason when measured against a realistic spread. And the gap between the 12,710 addresses and the 9,727 traffic rows reproduces the real relationship between the sitemap and the measurement window.
 
 Every figure quoted on this page was calculated from the four workbooks in this repository. The two screenshots were taken from the Power BI report built on those same workbooks.
