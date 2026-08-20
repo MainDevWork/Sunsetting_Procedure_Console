@@ -44,13 +44,9 @@ Two dashboard pages, both built on the same three workbooks.
 
 ## Where the Data Comes From
 
-**One row is one web address.** Not one page. A content management system also hands out addresses for stored files such as documents and images, and on a website of any age those outnumber the actual pages. They need decisions too, so they are included, but they are recorded in their own website section called `Media Library` and are never counted as pages. That section alone holds 7,400 of the 12,710 addresses, which is 58.2%. Excluding it leaves 5,310 addresses.
+A web address is not the same thing as a page. A content management system also hands out addresses for stored files such as documents and images, and on a website of any age those outnumber the actual pages. They need decisions too, so they are included, but they are recorded in their own website section called `Media Library` and are never counted as pages. That section alone holds 7,400 of the 12,710 addresses, 58.2%. Excluding it leaves 5,310 addresses.
 
-**Period.** Recorded discussion dates run from 12/08/2025 to 08/07/2026.
-
-**Volume.** 12,710 addresses in the ownership record and 12,710 in the decision record, which are the same set of addresses with no duplicates in either. 9,727 in the traffic file.
-
-**The fields.** 9 in each record file, 5 in the traffic file.
+Recorded discussion dates run from 12/08/2025 to 08/07/2026, covering 12,710 addresses in both the ownership and decision records (the same set, no duplicates in either) and 9,727 in the traffic file. Each record file carries 9 fields; the traffic file carries 5.
 
 | Group                | Fields                                                                                                                                                                       |
 | -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -60,9 +56,9 @@ Two dashboard pages, both built on the same three workbooks.
 | The decision         | `Sunsetting Procedure`, `Reason`, `Date of Sunsetting Discussion`, `Comments`, `Page Created`                                                                      |
 | Traffic              | `Page Views`, `Average Session Duration (s)`, `Bounce Rate`                                                                                                            |
 
-**Why the traffic file is smaller, and why that is not missing data.** A sitemap is the machine readable index a website publishes so that search engines and traffic measurement tools know which pages exist. An address absent from it can still be opened if you know it, but no measurement tool finds it, so it has no traffic row. 2,983 addresses have no traffic record: 2,641 flagged `NOT in Sitemap - Potential Sunset` and 342 published after traffic measurement ended. Reading a missing row as zero views would invert the finding, because for those addresses the absence of a row is itself the evidence.
+The traffic file is smaller than the other two, and that gap is evidence rather than a data quality problem. A sitemap is the machine readable index a website publishes so that search engines and traffic measurement tools know which pages exist. An address absent from it can still be opened if you know it, but no measurement tool finds it, so it has no traffic row. 2,983 addresses have no traffic record: 2,641 flagged `NOT in Sitemap - Potential Sunset` and 342 published after traffic measurement ended. Reading a missing row as zero views would invert the finding, because for those addresses the absence of a row is itself the evidence.
 
-**The condition the data was in.** This system does not clean a faulty export. It is the instrument that produces the data in the first place, so the design work went into preventing bad values from being entered rather than repairing them afterwards. `Sunsetting Procedure` and `Reason` are restricted at entry to the ten and five permitted values held on a separate `Lists` sheet inside the same workbook. The intake form restricts its `Decision` column to three values the same way. The two record files store their rows as named Excel tables, `tblWCR` and `tblSOR`, so a row added at the bottom is included in every total calculated from that table.
+This system does not clean a faulty export; it is the instrument that produces the data in the first place, so the design work went into preventing bad values from being entered rather than repairing them afterwards. `Sunsetting Procedure` and `Reason` are restricted at entry to the ten and five permitted values held on a separate `Lists` sheet inside the same workbook. The intake form restricts its `Decision` column to three values the same way. The two record files store their rows as named Excel tables, `tblWCR` and `tblSOR`, so a row added at the bottom is included in every total calculated from that table.
 
 ## How It Works
 
@@ -195,46 +191,46 @@ Two of these are routinely misread. Custodian Count counts accountable parties i
 
 These are figures from the published dataset, which is synthetic. They demonstrate what the tracker measures rather than describing any real website.
 
-**1. Ownership was solved first, and decisions followed.** 12,647 of 12,710 addresses have an owner who has accepted responsibility, which is 99.5%. Only 63 remain unowned, and rule 6 holds every one of those at the starting decision. Ownership is close to complete while decisions are only 51.8% final, which is the correct order, because no decision can be recorded against a page until somebody has accepted responsibility for it.
+**1.** Ownership came before decisions, in that order, and the figures show it: 99.5% of addresses (12,647 of 12,710) have an owner who has accepted responsibility, against only 51.8% of decisions marked final. Only 63 addresses remain unowned, and rule 6 holds every one of those at the starting decision. No decision can be recorded until somebody has accepted responsibility for the page, so ownership was always going to finish first.
 
-**2. Just over half the work is finished, and the rest is three different problems.** 6,582 addresses have a final decision. The remaining 6,128 split into 2,765 discussed and put off, 2,305 nobody has looked at yet, 793 that no division will claim, and 265 withdrawn pending a decision. Those need a follow up meeting, scheduling, an escalation and a review respectively. A single progress percentage would report all four as the same thing.
+**2.** 6,582 addresses have a final decision, just over half the backlog, and the remaining 6,128 are not one problem but four: 2,765 discussed and put off, 2,305 nobody has looked at yet, 793 that no division will claim, and 265 withdrawn pending a decision. Each needs a different response, a follow up meeting, scheduling, an escalation, or a review, so a single progress percentage would flatten four problems into one.
 
-**3. Stored files, not pages, dominate the count.** The `Media Library` section holds 7,400 of 12,710 addresses, 58.2% of the total. Quoting 12,710 as the size of the website overstates it by more than double. It is also the section with the highest retirement rate, at 39.6% marked for decommissioning against 21.0% for the `Business` section.
+**3.** `Media Library`, not actual pages, is where most of the count sits: 7,400 of 12,710 addresses, 58.2% of the total. Quoting 12,710 as the size of the website overstates it by more than double, and that section also carries the highest retirement rate, 39.6% marked for decommissioning against 21.0% for `Business`.
 
-**4. Addresses missing from the sitemap are retired at nearly twice the rate.** 49.5% of the 2,641 addresses flagged `NOT in Sitemap - Potential Sunset` are marked for decommissioning, against 29.1% of the 8,658 flagged `In Sitemap`. These are also the addresses with no traffic evidence at all, so 1,394 of the 4,237 retirement decisions cannot be supported by a traffic figure and rest on the division's judgement instead.
+**4.** Addresses missing from the sitemap retire at nearly twice the rate of addresses in it: 49.5% of the 2,641 flagged `NOT in Sitemap - Potential Sunset` are marked for decommissioning, against 29.1% of the 8,658 flagged `In Sitemap`. These are the same addresses with no traffic evidence at all, so 1,394 of the 4,237 retirement decisions rest on the division's judgement rather than a traffic figure.
 
-**5. Traffic is concentrated to a degree that makes it useless as a ranking on its own.** One address, the home page, accounts for 1,600,000 of 4,757,296 recorded views, which is 33.6% of all traffic. The ten busiest account for 65.9%. Of the 9,727 addresses with any measurement, 4,077 received fewer than 10 views, which is 41.9%. Median views by section run from 86.5 for `Business` down to 8 for `Media Library`.
+**5.** One address, the home page, accounts for 1,600,000 of 4,757,296 recorded views, 33.6% of all traffic, and the ten busiest account for 65.9% between them. That concentration makes raw view counts useless as a ranking on their own: of the 9,727 addresses with any measurement, 4,077 received fewer than 10 views, 41.9%, and median views by section run from 86.5 for `Business` down to 8 for `Media Library`.
 
-**6. Responsibility is concentrated in a small number of places.** Two divisions account for 10,854 of 12,710 addresses: `Media Library` with 7,400 and Market Information Unit with 3,454. A single named individual is custodian for 3,332 addresses. Fifteen further divisions share the remaining 1,856.
+**6.** Two divisions hold 10,854 of 12,710 addresses between them, `Media Library` with 7,400 and Market Information Unit with 3,454, and a single named individual is custodian for 3,332 addresses on his own. The remaining fifteen divisions share what's left, 1,856 addresses.
 
 ## What to Do About It
 
-**Run the four unfinished states separately.** The 2,305 addresses nobody has looked at need meetings scheduling. The 2,765 put off need a second session with the same division. The 793 nobody claims need escalating above divisional level, because the reason they have not moved is that no division will own them. The 265 withdrawn pending a decision need a date set for that decision. Working a single list from the top down treats four different problems as one queue.
+The 2,305 addresses nobody has looked at need meetings scheduled. The 2,765 discussed and put off need a second session with the same division. The 793 nobody claims need escalating above divisional level, because the reason they have not moved is that no division will own them. The 265 withdrawn pending a decision need a date set for that decision. These are four separate jobs: working a single list from the top down treats four different problems as one queue.
 
-**Deal with the 63 unowned addresses before anything else.** Rule 6 holds each of them at the starting decision, so no amount of divisional discussion moves them until somebody accepts responsibility. They are a small, defined and completely blocking piece of work.
+Fix the **63 unowned addresses** before anything else. Rule 6 holds each of them at the starting decision, so no amount of divisional discussion moves them until somebody accepts responsibility. Small, defined, and completely blocking.
 
-**Do not extend the deadline for the addresses with no traffic evidence.** The 2,983 addresses with no traffic record cannot be evidenced with page views, so they need a divisional answer or they will be carried across by default. They are also the addresses most likely to deserve retirement, at 49.5% already marked for it.
+Don't extend the deadline for the addresses with no traffic evidence. The 2,983 addresses with no traffic record cannot be evidenced with page views, so they need a divisional answer or they will be carried across by default. They are also the addresses most likely to deserve retirement: 49.5% are already marked for it.
 
-**Report the `Media Library` figure separately from the page figure every time.** At 58.2% of the total, it determines most of the value of any percentage calculated over the whole set, which is why both pages can be filtered by website section. A figure taken from an unfiltered card and one taken from a filtered card are not comparable.
+The `Media Library` figure needs reporting separately from the page figure, every time. At 58.2% of the total, it determines most of the value of any percentage calculated over the whole set, which is why both pages can be filtered by website section. A figure taken from an unfiltered card and one taken from a filtered card are not comparable.
 
-**Keep the ownership record after the migration.** The reduced set of pages is a one time result. The record of who answers for what is the part that stops the same question having to be answered from nothing next time.
+Keep the ownership record after the migration goes through. The reduced set of pages is a one time result; the record of who answers for what is what stops the same question having to be answered from nothing next time.
 
 ## Limitations and Assumptions
 
-- **The two progress figures do not measure what the wording suggests.** `Procedures Confirmed`, at 10,405, is higher than `URLs Discussed`, at 9,174, because `Another Discussion to be Held` counts as a recorded decision. 1,231 addresses carry a decision with no discussion date recorded against them. Neither figure alone states how many pages are actually settled. The count of final decisions, 6,582, is the honest answer to that question.
-- **Ownership is not enforced by the workbook that holds it.** `Sunsetting_Outcome_Records.xlsx` and `Custodian_Page_URLs_Template.xlsx` restrict their decision columns at entry. `Webpage_Custodianship_Records.xlsx` has a `Lists` sheet holding its permitted values, but no restriction applied to the cells, so its consistency is checked after the fact rather than prevented at the point of typing.
-- **`Page Created` is defined and empty.** The field exists in the schema and is filled in for none of the 12,710 rows. How old a page is would be the most useful thing the model does not yet measure.
-- **Traffic is a measurement window, not a lifetime total.** It ranks addresses against each other within that window. It does not state how many people have ever visited a page.
-- **The custodian count is not a headcount.** 3 of its 48 values are labels for content no individual owns.
-- **Two copies of the custodian name exist.** `Webpage Custodian` appears in both record files rather than in one, so that each file can be read on its own in Excel. The two copies can drift apart. The ownership record is the authoritative one.
-- **The dashboard calculations are documented as a specification.** What each figure means is written down in `Data_Dictionary.pdf` rather than reconstructed from the report file afterwards. The values they produce were checked against the three workbooks and match.
+- `Procedures Confirmed`, at 10,405, is actually higher than `URLs Discussed`, at 9,174, which is not what the names suggest: `Another Discussion to be Held` counts as a recorded decision, and 1,231 addresses carry a decision with no discussion date against them. Neither figure alone states how many pages are actually settled. The count of final decisions, 6,582, is the honest answer to that question.
+- Ownership isn't enforced by the workbook that holds it. `Sunsetting_Outcome_Records.xlsx` and `Custodian_Page_URLs_Template.xlsx` restrict their decision columns at entry; `Webpage_Custodianship_Records.xlsx` has a `Lists` sheet holding its permitted values, but no restriction applied to the cells, so its consistency is checked after the fact rather than prevented at the point of typing.
+- **`Page Created`** is defined in the schema and filled in for none of the 12,710 rows. How old a page is would be the most useful thing this model does not yet measure.
+- Traffic here is a measurement window, not a lifetime total. It ranks addresses against each other within that window; it does not state how many people have ever visited a page.
+- Three of the 48 values in `Webpage Custodian` are labels for content no individual owns, so the custodian count is not a headcount.
+- `Webpage Custodian` appears in both record files rather than one, so each file can be read on its own in Excel, and the two copies can drift apart. The ownership record is the authoritative one.
+- What each dashboard figure means is documented as a specification in `Data_Dictionary.pdf`, not reconstructed from the report file afterwards. The values it produces were checked against the three workbooks and match.
 
 ## Next Steps
 
-- **Fill in `Page Created` from the content management system.** Page age could then be used alongside traffic and ownership rather than instead of them.
-- **Separate the two progress figures properly.** Add a count of final decisions to the dashboard alongside the existing two, so that discussed, recorded and settled are three distinct numbers.
-- **Add a reconciliation check between the two copies of `Webpage Custodian`.** The rules already catch nine other classes of inconsistency and this is the tenth that is not yet covered.
-- **Apply the restriction lists to `Webpage_Custodianship_Records.xlsx`.** The permitted values are already on its `Lists` sheet, so this closes the one place where a wrong value can still be typed.
+- Fill in `Page Created` from the content management system, so page age can be used alongside traffic and ownership instead of standing in for them.
+- **Separate the two progress figures properly:** add a count of final decisions to the dashboard next to the existing two, so discussed, recorded, and settled read as three distinct numbers.
+- A reconciliation check between the two copies of `Webpage Custodian` is still missing. The rules already catch nine other classes of inconsistency; this would be the tenth.
+- Apply the restriction lists to `Webpage_Custodianship_Records.xlsx`. The permitted values already sit on its `Lists` sheet, which closes the one remaining place a wrong value can still be typed.
 
 ## About the Data
 
