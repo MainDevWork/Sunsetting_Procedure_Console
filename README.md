@@ -8,7 +8,7 @@ I built the system that decides, address by address, what moves and what doesn't
 
 That scoping work is what the migration's business case is built on. It went up through the organisation as the formal proposal to move the site onto a CMS designed to handle its scale, and it now sits with the executive committee, awaiting their approval before the migration itself can proceed.
 
-Three linked Excel workbooks hold the ownership record, the decision record and the traffic figures. An intake form collects decisions from each business division. The two page Power BI report tracks progress across all 12,710 addresses: how many have a confirmed custodian, how many have a confirmed sunsetting decision, and how many have both — so the work stays visible instead of disappearing into a backlog nobody can see the end of.
+Three linked Excel workbooks hold the ownership record, the decision record and the traffic figures. An intake form collects decisions from each business division. The two page Power BI report tracks progress across all 12,710 addresses: how many have a confirmed custodian, how many have a confirmed sunsetting decision, and how many have both, so the work stays visible instead of disappearing into a backlog nobody can see the end of.
 
 ## The Numbers
 
@@ -22,7 +22,7 @@ Every figure on this page is a property of the published dataset, which is synth
 
 | File                                                                    | What It Is                                                                                                                                                                                       |
 | ----------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [**Data_Dictionary.pdf**](Data_Dictionary.pdf)                     | **Read this first.** The data dictionary — a 14-page reference defining every field in the data set, the values each one accepts, and what each dashboard figure calculates                                         |
+| [**Data_Dictionary.pdf**](Data_Dictionary.pdf)                     | **Read this first.** The data dictionary: a 14-page reference defining every field in the data set, the values each one accepts, and what each dashboard figure calculates                                         |
 | [Project_Brief.pdf](Project_Brief.pdf)                                   | 5 pages. What the programme covers, who is responsible for what, how a page gets assessed, and over what timescale                                                                               |
 | [Webpage_Custodianship_Records.xlsx](Webpage_Custodianship_Records.xlsx) | The ownership record. 12,710 rows, 9 fields, on a sheet named`Webpage_Demographic`. One named person per web address, the division they work in, and whether they have accepted responsibility |
 | [Sunsetting_Outcome_Records.xlsx](Sunsetting_Outcome_Records.xlsx)       | The decision record. 12,710 rows, 9 fields. One decision per web address chosen from a fixed list of ten, with a reason, a date and a written explanation                                        |
