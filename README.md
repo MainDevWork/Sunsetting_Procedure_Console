@@ -8,7 +8,7 @@ I built the system that decides, address by address, what moves and what doesn't
 
 That scoping work is what the migration's business case is built on. It went up through the organisation as the formal proposal to move the site onto a CMS designed to handle its scale, and it now sits with the executive committee, awaiting their approval before the migration itself can proceed.
 
-Three linked Excel workbooks hold the ownership record, the decision record and the traffic figures. An intake form collects decisions from each business division. A two page Power BI report is built on all three workbooks and states how far the work has got and where responsibility is still missing.
+Three linked Excel workbooks hold the ownership record, the decision record and the traffic figures. An intake form collects decisions from each business division. The two page Power BI report tracks progress across all 12,710 addresses: how many have a confirmed custodian, how many have a confirmed sunsetting decision, and how many have both — so the work stays visible instead of disappearing into a backlog nobody can see the end of.
 
 ## The Numbers
 
