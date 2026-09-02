@@ -6,7 +6,7 @@
 
 I built the system that assigns each page a custodian, the person who decides whether it stays or goes. Working with a digital team and stakeholders across the business, the audit went through the site page by page, sorted legacy content from what was still relevant, and routed each page to a decision: decommissioned, or migrated onto the new CMS. That work is part of a wider project to migrate the site onto a CMS designed to handle the organisation's scale, and the audit's findings built the business case for it, now before executives for approval.
 
-Three linked Excel workbooks hold the ownership record, the decision record and the traffic figures. A validated intake form collects decisions from each business division. A two page Power BI report is built on all three workbooks and states how far the work has got and where responsibility is still missing.
+Three linked Excel workbooks hold the ownership record, the decision record and the traffic figures. An intake form collects decisions from each business division. A two page Power BI report is built on all three workbooks and states how far the work has got and where responsibility is still missing.
 
 ## The Numbers
 
@@ -20,7 +20,7 @@ Every figure on this page is a property of the published dataset, which is synth
 
 | File                                                                    | What It Is                                                                                                                                                                                       |
 | ----------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [**Data_Dictionary.pdf**](Data_Dictionary.pdf)                     | **Read this first.** The data dictionary — a 14-page reference defining every field in the data set, the values each one accepts, what each dashboard figure calculates, and the ten rules the data has to pass                                         |
+| [**Data_Dictionary.pdf**](Data_Dictionary.pdf)                     | **Read this first.** The data dictionary — a 14-page reference defining every field in the data set, the values each one accepts, and what each dashboard figure calculates                                         |
 | [Project_Brief.pdf](Project_Brief.pdf)                                   | 5 pages. What the programme covers, who is responsible for what, how a page gets assessed, and over what timescale                                                                               |
 | [Webpage_Custodianship_Records.xlsx](Webpage_Custodianship_Records.xlsx) | The ownership record. 12,710 rows, 9 fields, on a sheet named`Webpage_Demographic`. One named person per web address, the division they work in, and whether they have accepted responsibility |
 | [Sunsetting_Outcome_Records.xlsx](Sunsetting_Outcome_Records.xlsx)       | The decision record. 12,710 rows, 9 fields. One decision per web address chosen from a fixed list of ten, with a reason, a date and a written explanation                                        |
@@ -57,7 +57,7 @@ Recorded discussion dates run from 12/08/2025 to 08/07/2026, covering 12,710 add
 
 The traffic file is smaller than the other two, and that gap is evidence rather than a data quality problem. A sitemap is the machine readable index a website publishes so that search engines and traffic measurement tools know which pages exist. An address absent from it can still be opened if you know it, but no measurement tool finds it, so it has no traffic row. 2,983 addresses have no traffic record: 2,641 flagged `NOT in Sitemap - Potential Sunset` and 342 published after traffic measurement ended. Reading a missing row as zero views would invert the finding, because for those addresses the absence of a row is itself the evidence.
 
-This system does not clean a faulty export; it is the instrument that produces the data in the first place, so the design work went into preventing bad values from being entered rather than repairing them afterwards. `Sunsetting Procedure` and `Reason` are restricted at entry to the ten and five permitted values held on a separate `Lists` sheet inside the same workbook. The intake form restricts its `Decision` column to three values the same way. The two record files store their rows as named Excel tables, `tblWCR` and `tblSOR`, so a row added at the bottom is included in every total calculated from that table.
+`Sunsetting Procedure` and `Reason` are restricted at entry to the ten and five permitted values held on a separate `Lists` sheet inside the same workbook. The intake form restricts its `Decision` column to three values the same way. The two record files store their rows as named Excel tables, `tblWCR` and `tblSOR`, so a row added at the bottom is included in every total calculated from that table.
 
 ## How It Works
 
@@ -127,25 +127,6 @@ A simple confirmed against unconfirmed field would put "we discussed this and pu
 
 `Webpage Custodian` holds 48 distinct values: 45 named individuals and 3 labels that are not people. `Media Library` marks stored files that no division authored, `Digital Team` marks site infrastructure or a page no division claims, and `Yet to be Confirmed` marks ownership that is genuinely unknown. Nobody is not an available answer, because a page with no owner and no marker is precisely the page that gets missed. 7,855 addresses are held by those three labels and 4,855 by named individuals.
 
-### The Rules That Are Enforced
-
-Ten rules hold across the three files. Every one of them passes on the published data.
-
-| #  | Rule                                                                                                |
-| -- | --------------------------------------------------------------------------------------------------- |
-| 1  | `URL Links` appears once only within each of the three files                                      |
-| 2  | The ownership record and the decision record contain an identical set of addresses                  |
-| 3  | Every address in the traffic file exists in the ownership record. The reverse does not hold         |
-| 4  | No traffic row exists for an address flagged`NOT in Sitemap - Potential Sunset`                   |
-| 5  | `Custodian Confirmed` is `No` exactly when the custodian is `Yet to be Confirmed`             |
-| 6  | An address whose custodian is`Yet to be Confirmed` must have the decision `Yet To Be Confirmed` |
-| 7  | An address with the decision`Yet To Be Confirmed` has no reason and no discussion date            |
-| 8  | `Reason` is empty for `Another Discussion to be Held` and `Digital Team Discretion`           |
-| 9  | Every business unit belongs to exactly one division                                                 |
-| 10 | Every value in a restricted column appears on that workbook's`Lists` sheet                        |
-
-Rule 6 is the one that matters in use. It is the formal statement that a page nobody owns cannot be marked for deletion, and it is enforced in the data rather than left to good intentions. 63 addresses currently sit in that state.
-
 ### One Address Traced From Beginning to End
 
 Row `WCR196` in the ownership record and row `SOR196` in the decision record are the same web address, `https://www.sableridge.co.za/learning/publications/webinars`.
@@ -158,7 +139,7 @@ Row `WCR196` in the ownership record and row `SOR196` in the decision record are
 | Ownership | `Business Unit`                 | Brand Studio                                                                                                                                |
 | Ownership | `Business Divisions`            | Brand & Communications, the division the form was sent to                                                                                   |
 | Ownership | `Webpage Custodian`             | Annelie Mnisi                                                                                                                               |
-| Ownership | `Custodian Confirmed`           | `Yes`, so rule 6 permits a real decision                                                                                                  |
+| Ownership | `Custodian Confirmed`           | `Yes`, so a real decision could be recorded against it                                                                                    |
 | Traffic   | `Page Views`                    | 132                                                                                                                                         |
 | Traffic   | `Average Session Duration (s)`  | 188.66                                                                                                                                      |
 | Traffic   | `Bounce Rate`                   | 0.4031                                                                                                                                      |
@@ -167,7 +148,7 @@ Row `WCR196` in the ownership record and row `SOR196` in the decision record are
 | Decision  | `Reason`                        | `Very Low Page Views`                                                                                                                     |
 | Decision  | `Comments`                      | "This page relates to an event or campaign that has concluded. The content is out of date and no longer serves a current business purpose." |
 
-Reading across: the division named an owner and she accepted, which is what rule 6 requires before any decision other than the starting one can be recorded. The page is in the sitemap, so its 132 views are measurable and `Very Low Page Views` can be evidenced rather than asserted. The written comment gives the reason the five permitted values cannot express, which is that the campaign behind the page has ended. Six months later, the questions "who agreed to this", "when" and "on what grounds" all have answers on one row.
+Reading across: the division named an owner and she accepted, which is what has to happen before any decision other than the starting one can be recorded. The page is in the sitemap, so its 132 views are measurable and `Very Low Page Views` can be evidenced rather than asserted. The written comment gives the reason the five permitted values cannot express, which is that the campaign behind the page has ended. Six months later, the questions "who agreed to this", "when" and "on what grounds" all have answers on one row.
 
 ### The Figures on the Dashboard
 
@@ -190,7 +171,7 @@ Two of these are routinely misread. Custodian Count counts accountable parties i
 
 These are figures from the published dataset, which is synthetic. They demonstrate what the tracker measures rather than describing any real website.
 
-**1.** Ownership came before decisions, in that order, and the figures show it: 99.5% of addresses (12,647 of 12,710) have an owner who has accepted responsibility, against only 51.8% of decisions marked final. Only 63 addresses remain unowned, and rule 6 holds every one of those at the starting decision. No decision can be recorded until somebody has accepted responsibility for the page, so ownership was always going to finish first.
+**1.** Ownership came before decisions, in that order, and the figures show it: 99.5% of addresses (12,647 of 12,710) have an owner who has accepted responsibility, against only 51.8% of decisions marked final. Only 63 addresses remain unowned, and every one of those sits at the starting decision. No decision can be recorded until somebody has accepted responsibility for the page, so ownership was always going to finish first.
 
 **2.** 6,582 addresses have a final decision, just over half the backlog, and the remaining 6,128 are not one problem but four: 2,765 discussed and put off, 2,305 nobody has looked at yet, 793 that no division will claim, and 265 withdrawn pending a decision. Each needs a different response, a follow up meeting, scheduling, an escalation, or a review, so a single progress percentage would flatten four problems into one.
 
@@ -206,7 +187,7 @@ These are figures from the published dataset, which is synthetic. They demonstra
 
 The 2,305 addresses nobody has looked at need meetings scheduled. The 2,765 discussed and put off need a second session with the same division. The 793 nobody claims need escalating above divisional level, because the reason they have not moved is that no division will own them. The 265 withdrawn pending a decision need a date set for that decision. These are four separate jobs: working a single list from the top down treats four different problems as one queue.
 
-Fix the **63 unowned addresses** before anything else. Rule 6 holds each of them at the starting decision, so no amount of divisional discussion moves them until somebody accepts responsibility. Small, defined, and completely blocking.
+Fix the **63 unowned addresses** before anything else. Each sits at the starting decision, so no amount of divisional discussion moves them until somebody accepts responsibility. Small, defined, and completely blocking.
 
 Don't extend the deadline for the addresses with no traffic evidence. The 2,983 addresses with no traffic record cannot be evidenced with page views, so they need a divisional answer or they will be carried across by default. They are also the addresses most likely to deserve retirement: 49.5% are already marked for it.
 
@@ -228,14 +209,14 @@ Keep the ownership record after the migration goes through. The reduced set of p
 
 - Fill in `Page Created` from the content management system, so page age can be used alongside traffic and ownership instead of standing in for them.
 - **Separate the two progress figures properly:** add a count of final decisions to the dashboard next to the existing two, so discussed, recorded, and settled read as three distinct numbers.
-- A reconciliation check between the two copies of `Webpage Custodian` is still missing. The rules already catch nine other classes of inconsistency; this would be the tenth.
+- A reconciliation check between the two copies of `Webpage Custodian` is still missing, so the two can drift apart unnoticed.
 - Apply the restriction lists to `Webpage_Custodianship_Records.xlsx`. The permitted values already sit on its `Lists` sheet, which closes the one remaining place a wrong value can still be typed.
 
 ## About the Data
 
 **Every value in this repository is invented.** The addresses, page names, custodian names, business units, divisions, decisions, dates, comments and traffic figures are generated from a fixed starting number against a fictitious organisation called Sableridge Exchange, at `www.sableridge.co.za`. No real web address, person, division or decision appears anywhere in these files. Nothing here describes any real organisation's website, staff or decisions. The generating script is not published.
 
-What is real is the system: the fields, the ten decisions, the five reasons, the three assessment questions, the ten integrity rules, the join between the three files, the dashboard calculations, the CMS diagnosis and business case, and the process that produces the records. That work was done for a stock exchange's digital team as part of a wider CMS migration project, and the published copy replaces the organisation and every value in it. The names of the three destinations behind the `Move To` decisions are generalised for the same reason. The routing itself is as it was designed.
+What is real is the system: the fields, the ten decisions, the five reasons, the three assessment questions, the join between the three files, the dashboard calculations, the CMS diagnosis and business case, and the process that produces the records. That work was done for a stock exchange's digital team as part of a wider CMS migration project, and the published copy replaces the organisation and every value in it. The names of the three destinations behind the `Move To` decisions are generalised for the same reason. The routing itself is as it was designed.
 
 Two properties of the invented data were preserved deliberately, because the system exists to handle them. Traffic is concentrated in the same way as on real websites, where a single page takes a large share of all views and most pages take almost none, because `Very Low Page Views` is only a usable reason when measured against a realistic spread. And the gap between the 12,710 addresses and the 9,727 traffic rows reproduces the real relationship between the sitemap and the measurement window.
 
