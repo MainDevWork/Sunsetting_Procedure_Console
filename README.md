@@ -1,6 +1,6 @@
 # Sunsetting Procedure Console
 
-**A Power BI system that gives every page across a 12,710-address website backlog a custodian and a decision, built to support a stock exchange's move to a new content management system.**
+**A Power BI system built to support a stock exchange's move to a new content management system: it gives every page across a 12,710-address website backlog a custodian and a decision, and the audit's findings became the migration's business case, now in front of executives for approval.**
 
 `Power BI` `DAX` `Power Query` `Microsoft Excel`
 
@@ -20,7 +20,7 @@ Every figure on this page is a property of the published dataset, which is synth
 
 | File                                                                    | What It Is                                                                                                                                                                                       |
 | ----------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [**Data_Dictionary.pdf**](Data_Dictionary.pdf)                     | **Read this first.** 14 pages. Every field, the values each one accepts, what each dashboard figure calculates, and ten rules the data has to pass                                         |
+| [**Data_Dictionary.pdf**](Data_Dictionary.pdf)                     | **Read this first.** The data dictionary — a 14-page reference defining every field in the data set, the values each one accepts, what each dashboard figure calculates, and the ten rules the data has to pass                                         |
 | [Project_Brief.pdf](Project_Brief.pdf)                                   | 5 pages. What the programme covers, who is responsible for what, how a page gets assessed, and over what timescale                                                                               |
 | [Webpage_Custodianship_Records.xlsx](Webpage_Custodianship_Records.xlsx) | The ownership record. 12,710 rows, 9 fields, on a sheet named`Webpage_Demographic`. One named person per web address, the division they work in, and whether they have accepted responsibility |
 | [Sunsetting_Outcome_Records.xlsx](Sunsetting_Outcome_Records.xlsx)       | The decision record. 12,710 rows, 9 fields. One decision per web address chosen from a fixed list of ten, with a reason, a date and a written explanation                                        |
